@@ -50,10 +50,15 @@ public class ABMProyectoActivity extends AppCompatActivity {
 
     }
 
+    public boolean ratioValido(){
+        double ratio = proyecto.getPresupuesto()/proyecto.getHoras();
+        return ratio<1000 && ratio > 100;
+    }
+
     public void saveOrUpdate(){
         bindEditToProyecto();
-        double ratio = proyecto.getPresupuesto()/proyecto.getHoras();
-        if(ratio>1000 || ratio < 100) {
+
+        if(!ratioValido()){
             mostrarMensajeError("El ratio Presupuesto/hora debe estar en un valor entre 100 y 1000");
             return;
         }
