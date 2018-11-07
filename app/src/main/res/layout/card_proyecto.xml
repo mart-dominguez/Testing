@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:padding="16dp"
+    >
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cardProyecto"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/cliente_img"
+                android:maxWidth="24dp"
+                android:maxHeight="24dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="16dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/pry_nombre"
+                android:layout_toRightOf="@+id/cliente_img"
+                android:layout_alignParentTop="true"
+                android:textSize="20sp"
+                android:textStyle="italic"
+             />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/pry_presup_lbl"
+                android:text="Presupuesto($)"
+                android:layout_toRightOf="@+id/cliente_img"
+                android:layout_below="@+id/pry_nombre"
+                android:layout_alignParentTop="false"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/pry_presup"
+                android:layout_toRightOf="@+id/pry_presup_lbl"
+                android:layout_below="@+id/pry_nombre"
+                android:layout_marginRight="16dp"
+                android:textSize="18sp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/pry_hs_lbl"
+                android:text="Hs: "
+                android:layout_toRightOf="@+id/cliente_img"
+                android:layout_below="@+id/pry_presup_lbl"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/pry_horas"
+                android:layout_toRightOf="@+id/pry_hs_lbl"
+                android:layout_below="@+id/pry_presup_lbl"
+                android:textSize="18sp"
+                android:layout_marginLeft="16dp"
+                />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/btnEditarProyecto"
+                android:id="@+id/btn_editar"
+                android:layout_alignParentStart="true"
+                android:layout_toRightOf="@+id/cliente_img"
+                android:layout_below="@+id/pry_horas"
+                />
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

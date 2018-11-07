@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Testing</string>
+    <string name="abmPryNombre">Nombre del Proyecto</string>
+    <string name="abmPryHoras">Horas Presupuestadas</string>
+    <string name="abmPryPresupuesto">Presupuesto Maximo ($)</string>
+    <string name="abmPryBtnGuardar">Guardar</string>
+    <string name="abmTarNombre">Tarea</string>
+    <string name="abmTarHoras">Horas estimadas</string>
+    <string name="abmTarCosto">Costo por hora</string>
+    <string name="abmTarBtnGuardar">Guardar</string>
+    <string name="btnError">Aceptar</string>
+    <string name="btnEditarProyecto">Editar</string>
+</resources>
