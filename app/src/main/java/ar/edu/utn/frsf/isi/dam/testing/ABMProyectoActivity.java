@@ -51,7 +51,9 @@ public class ABMProyectoActivity extends AppCompatActivity {
     }
 
     public boolean ratioValido(){
+        System.out.println(" - - - test ");
         double ratio = proyecto.getPresupuesto()/proyecto.getHoras();
+        System.out.println(" - - - "+ratio);
         return ratio<1000 && ratio > 100;
     }
 
@@ -142,4 +144,51 @@ public class ABMProyectoActivity extends AppCompatActivity {
             dialogo.show();
    }
 
+    public EditText getEdtNombre() {
+        return edtNombre;
+    }
+
+    public void setEdtNombre(EditText edtNombre) {
+        this.edtNombre = edtNombre;
+    }
+
+    public EditText getEdtPresup() {
+        return edtPresup;
+    }
+
+    public void setEdtPresup(EditText edtPresup) {
+        this.edtPresup = edtPresup;
+    }
+
+    public EditText getEdtHoras() {
+        return edtHoras;
+    }
+
+    public void setEdtHoras(EditText edtHoras) {
+        this.edtHoras = edtHoras;
+    }
+
+    public Button getBtnGuardar() {
+        return btnGuardar;
+    }
+
+    public void setBtnGuardar(Button btnGuardar) {
+        this.btnGuardar = btnGuardar;
+    }
+
+    public ProyectoDao getDao() {
+        return dao;
+    }
+
+    public void setDao(ProyectoDao dao) {
+        this.dao = dao;
+    }
+
+    public Proyecto getProyecto() {
+        return proyecto;
+    }
+
+    public void setProyecto(Proyecto proyecto) {
+        this.proyecto = proyecto;
+    }
 }
