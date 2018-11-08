@@ -25,6 +25,7 @@ public class ABMProyectoActivity extends AppCompatActivity {
 
     private Proyecto proyecto;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,9 +52,7 @@ public class ABMProyectoActivity extends AppCompatActivity {
     }
 
     public boolean ratioValido(){
-        System.out.println(" - - - test ");
         double ratio = proyecto.getPresupuesto()/proyecto.getHoras();
-        System.out.println(" - - - "+ratio);
         return ratio<1000 && ratio > 100;
     }
 
@@ -109,6 +108,9 @@ public class ABMProyectoActivity extends AppCompatActivity {
     }
 
     private void bindEditToProyecto(){
+        System.out.println("1: "+proyecto);
+        System.out.println("2: "+edtNombre);
+        System.out.println("3: "+edtNombre.getText());
         proyecto.setNombre(edtNombre.getText().toString());
         proyecto.setHoras(Integer.valueOf(edtHoras.getText().toString()));
         proyecto.setPresupuesto(Double.valueOf(edtPresup.getText().toString()));
