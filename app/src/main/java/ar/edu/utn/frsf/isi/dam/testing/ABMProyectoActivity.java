@@ -10,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import ar.edu.utn.frsf.isi.dam.testing.dao.AppDatabaseFactory;
 import ar.edu.utn.frsf.isi.dam.testing.dao.ProyectoDao;
@@ -142,6 +143,7 @@ public class ABMProyectoActivity extends AppCompatActivity {
                     break;
                 case 2:
                     clearEdt();
+                    Toast.makeText(ABMProyectoActivity.this,"Proyecto guardado",Toast.LENGTH_LONG).show();
                     break;
             }
         }

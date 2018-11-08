@@ -2,13 +2,18 @@ package ar.edu.utn.frsf.isi.dam.testing;
 
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
+import org.robolectric.Shadows;
 import org.robolectric.annotation.Config;
+
+import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -34,8 +39,7 @@ public class RobolectricTest {
     }
 
     @Test
-    public void debeGrabar() throws Exception
-    {
+    public void debeGrabar() throws Exception {
         assertNotNull( activity.getBtnGuardar() );
         EditText txtNombre = (EditText) activity.findViewById(R.id.abmPryNombre);
         EditText txtHoras = (EditText) activity.findViewById(R.id.abmPryHoras);
@@ -50,8 +54,22 @@ public class RobolectricTest {
         Robolectric.flushForegroundThreadScheduler();
         assertEquals("",txtNombre.getText().toString());
         assertEquals("",txtHoras.getText().toString());
-
-
         assertEquals("",txtPresup.getText().toString());
+        List<Toast> toasts = Shadows.shadowOf(activity.getApplication()).getShownToasts();
+        assertEquals(1,toasts.size());
     }
+
+    /*@Test
+    public void shouldHaveDefaultMargin() throws Exception {
+        TextView textView = (TextView) activity.findViewById(R.id.hello_textview);
+        int bottomMargin = ((LinearLayout.LayoutParams) textView.getLayoutParams()).bottomMargin;
+        assertEquals(5, bottomMargin);
+        int topMargin = ((LinearLayout.LayoutParams) textView.getLayoutParams()).topMargin;
+        assertEquals(5, topMargin);
+        int rightMargin = ((LinearLayout.LayoutParams) textView.getLayoutParams()).rightMargin;
+        assertEquals(10, rightMargin);
+        int leftMargin = ((LinearLayout.LayoutParams) textView.getLayoutParams()).leftMargin;
+        assertEquals(10, leftMargin);
+    }
+    */
 }
