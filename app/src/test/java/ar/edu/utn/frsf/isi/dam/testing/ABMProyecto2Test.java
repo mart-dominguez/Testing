@@ -1,5 +1,6 @@
 package ar.edu.utn.frsf.isi.dam.testing;
 
+import android.content.Context;
 import android.os.Handler;
 import android.text.Editable;
 import android.widget.EditText;
@@ -33,6 +34,8 @@ import static org.mockito.Mockito.when;
 public class ABMProyecto2Test {
 
     ABMProyectoActivity  activityABMPry;
+
+    @Mock Context ctx;
 
     @Mock
     ProyectoDao daoMock;
@@ -85,6 +88,7 @@ public class ABMProyecto2Test {
         activityABMPry.saveOrUpdate();
         verify(daoMock, times(1)).insert(proyectoMock);
         verify(daoMock, times(0)).update(proyectoMock);
+
 
     }
 

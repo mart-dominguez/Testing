@@ -58,7 +58,7 @@ public class ABMProyectoActivity extends AppCompatActivity {
 
     public void saveOrUpdate(){
         bindEditToProyecto();
-
+        System.out.println("RATIO VALIDO "+ratioValido());
         if(!ratioValido()){
             mostrarMensajeError("El ratio Presupuesto/hora debe estar en un valor entre 100 y 1000");
             return;
@@ -67,8 +67,24 @@ public class ABMProyectoActivity extends AppCompatActivity {
         Runnable hiloGuardar = new Runnable() {
             @Override
             public void run() {
-                if(proyecto.getId()>0) dao.update(proyecto);
-                else dao.insert(proyecto);
+                System.out.println("GUARDA NUEVO 1 "+proyecto.getId());
+                System.out.println("GUARDA NUEVO 2 "+proyecto.getNombre());
+                System.out.println("DAO ? "+dao);
+
+                if(proyecto.getId()>0){
+                    System.out.println("ANTES UPDATE"+dao);
+                    dao.update(proyecto);
+                    System.out.println("DESPUES UPDATE"+dao);
+                }
+                else{
+                    System.out.println("Antes insert "+dao);
+                    long millis1 = System.currentTimeMillis();
+                    dao.insert(proyecto);
+                    long millis2 = System.currentTimeMillis()-millis1;
+                    System.out.println("DESPUES insert "+dao+ "  : "+millis2);
+
+                }
+                System.out.println("Envia mensaje --> 2");
                 msgHandler.sendEmptyMessage(2);
             }
         };
@@ -119,6 +135,7 @@ public class ABMProyectoActivity extends AppCompatActivity {
     Handler msgHandler = new Handler(){
         @Override
         public void handleMessage(Message msg) {
+            System.out.println("Llega mensaje "+msg.what);
             switch (msg.what){
                 case 1:
                     bindProyectoToEdt();
